@@ -1,8 +1,8 @@
 package dominio.envio;
 
-public class Pendiente implements Estado{
+public class Pendiente extends Estado{
     @Override
-    public void hacerAlgo() {
+    public void confirmar(Envio unEvio){
 
     }
 }

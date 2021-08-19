@@ -1,9 +1,9 @@
 package dominio.envio;
 
-public class Entregado implements Estado
+public class Entregado extends Estado
 {
     @Override
-    public void hacerAlgo() {
+    public void confirmar(Envio unEnvio) {
 
     }
 }

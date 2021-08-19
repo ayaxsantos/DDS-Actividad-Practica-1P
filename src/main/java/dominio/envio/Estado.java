@@ -1,6 +1,7 @@
 package dominio.envio;
 
-public interface Estado
-{
-    public void hacerAlgo();
+public abstract class Estado {
+
+    public abstract void confirmar(Envio unEnvio);
+
 }

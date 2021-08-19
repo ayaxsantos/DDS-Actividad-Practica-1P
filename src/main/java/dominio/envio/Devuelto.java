@@ -1,9 +1,9 @@
 package dominio.envio;
 
-public class Devuelto implements Estado
+public class Devuelto extends Estado
 {
     @Override
-    public void hacerAlgo() {
+    public void confirmar(Envio unEnvio) {
 
     }
 }
