@@ -3,7 +3,7 @@ package dominio.envio;
 import dominio.Paquete.Paquete;
 import dominio.destinatario.Destinatario;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +12,7 @@ public class Envio
     protected String codigoEnvio;
     private Destinatario destinatario;
     private Observador registro;
-    private LocalDate fecha;
+    protected LocalDateTime fechaDevolucion;
     private Estado estado;
     private List<Paquete> paquetes = new ArrayList<>();
     private Destino destino;
@@ -52,4 +52,9 @@ public class Envio
     {
         return this.paquetes.stream().mapToInt(unPaquete -> unPaquete.peso).sum();
     }
+
+    public void setFechaDevolucion(LocalDateTime fechaDevolucion) {
+        this.fechaDevolucion = fechaDevolucion;
+    }
+
 }
