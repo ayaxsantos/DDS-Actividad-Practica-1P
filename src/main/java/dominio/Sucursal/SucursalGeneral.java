@@ -3,17 +3,18 @@ package dominio.Sucursal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SucursalGeneral implements SucursalLogistica{
+public class SucursalGeneral implements SucursalLogistica {
 
     private List<SucursalLogistica> sucursalesSimples = new ArrayList<>();
 
-    public void generarRecorrido(){
-
+    @Override
+    public void generarRecorrido()
+    {
+        this.sucursalesSimples.forEach(unaSucursal -> unaSucursal.generarRecorrido());
     }
 
-    public void agregarSucursalSimple(SucursalLogisticaSimple unaSucursal){
+    public void agregarSucursal(SucursalLogistica unaSucursal){
         this.sucursalesSimples.add(unaSucursal);
     }
-
 
 }
