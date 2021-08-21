@@ -7,12 +7,14 @@ public class Destino {
     public String departamento;
     public String localidad;
 
-    public Destino(String calle, int numero, String departamento, String localidad)
+    public Destino(String calle, int numero, String localidad)
     {
         this.calle = calle;
         this.numero = numero;
-        this.departamento = departamento;
         this.localidad = localidad;
     }
 
+    public void departamento(String departamento) {
+        this.departamento = departamento;
+    }
 }
