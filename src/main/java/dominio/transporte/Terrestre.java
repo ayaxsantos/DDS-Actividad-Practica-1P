@@ -10,7 +10,8 @@ public class Terrestre implements EstrategiaEnvio
     public List<Destino> recorrido = new ArrayList<>();
 
     @Override
-    public void empezarRecorrido() {
-
+    public int hacerRecorrido(Transporte unTransporte)
+    {
+        return unTransporte.cantidadEnvios() * 2;
     }
 }
