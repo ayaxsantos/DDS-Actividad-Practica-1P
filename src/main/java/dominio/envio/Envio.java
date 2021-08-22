@@ -25,6 +25,15 @@ public class Envio
         this.destino = destino;
     }
 
+    public int cantidadPaquetes(){
+        return paquetes.size();
+    }
+
+    public Destinatario destinatario()
+    {
+        return this.destinatario;
+    }
+
     public void confirmar(){
         this.estado.confirmar(this);
     }
