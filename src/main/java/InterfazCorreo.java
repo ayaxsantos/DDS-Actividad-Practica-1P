@@ -26,6 +26,5 @@ public class InterfazCorreo
         observadorRegistro.leerRegistroDelDia(envioPri);
         observadorRegistro.leerRegistroDelDia(envioSeg);
         observadorRegistro.leerRegistroDelDia(envioTer);
-
     }
 }
