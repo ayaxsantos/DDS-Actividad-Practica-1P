@@ -3,10 +3,12 @@ package dominio.envio;
 import dominio.Paquete.Paquete;
 import dominio.destinatario.Destinatario;
 
+import javax.persistence.Entity;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Envio
 {
     protected String codigoEnvio;
