@@ -3,12 +3,12 @@ package dominio.envio;
 import dominio.Paquete.Paquete;
 import dominio.destinatario.Destinatario;
 
-import javax.persistence.Entity;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+
 public class Envio
 {
     protected String codigoEnvio;
@@ -17,16 +17,14 @@ public class Envio
     protected LocalDateTime fechaDevolucion;
     private Estado estado;
     private List<Paquete> paquetes = new ArrayList<>();
-    private Destino destino;
     private int pesoTotal;
 
-    public Envio(String codigoEnvio, Destinatario destinatario, Observador registro, Destino destino) {
+    public Envio(String codigoEnvio, Destinatario destinatario, Observador registro) {
         this.codigoEnvio = codigoEnvio;
         this.destinatario = destinatario;
         this.registro = registro;
         this.pesoTotal = 0;
         this.cambiarEstadoActualizando(new Pendiente()); //?
-        this.destino = destino;
     }
 
     public String codigoEnvio() {

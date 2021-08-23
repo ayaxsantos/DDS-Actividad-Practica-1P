@@ -1,8 +1,8 @@
 package dominio.envio;
 
-import javax.persistence.Entity
 
-@Entity
+
+
 public class Destino {
 
     public String calle;
