@@ -3,21 +3,39 @@ package dominio.envio;
 import dominio.Paquete.Paquete;
 import dominio.destinatario.Destinatario;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "Envio")
 public class Envio
 {
+    @Id
+    @GeneratedValue
+    private int id;
+
+    @Transient
     protected String codigoEnvio;
+    @Transient
     private Destinatario destinatario;
+    @Transient
     private Observador registro;
+
+    @Transient
     protected LocalDateTime fechaDevolucion;
+
+    @Transient
     private Estado estado;
+
+    @OneToMany
     private List<Paquete> paquetes = new ArrayList<>();
+
+    @Transient
     private Destino destino;
+
+    @Column(name = "pesoTotal")
     private int pesoTotal;
 
     public Envio(String codigoEnvio, Destinatario destinatario, Observador registro, Destino destino) {
