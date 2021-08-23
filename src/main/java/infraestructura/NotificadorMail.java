@@ -27,9 +27,9 @@ public class NotificadorMail implements Notificador {
 
         try {
             Message msg = new MimeMessage(session);
-            msg.setFrom(new InternetAddress(emailOrigen, "OKA")); //Setteas el que manda el mail
+            msg.setFrom(new InternetAddress(emailOrigen)); //Setteas el que manda el mail
             msg.addRecipient(Message.RecipientType.TO,
-                    new InternetAddress(destinatario, "Cliente")); //Setteas quien lo recibe
+                    new InternetAddress(destinatario)); //Setteas quien lo recibe
             msg.setSubject(asunto);
             msg.setText(cuerpo);
             //Vamos a usar stmp para gmail
