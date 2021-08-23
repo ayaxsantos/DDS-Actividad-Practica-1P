@@ -5,9 +5,8 @@ public class Paquete
     public int peso;
     public Tamanio tamanio;
 
-    public Paquete (int peso, Tamanio tamanio) {
+    public Paquete(int peso) {
         this.peso = peso;
-        this.tamanio = tamanio;
     }
 
     public void definirTamanio(){

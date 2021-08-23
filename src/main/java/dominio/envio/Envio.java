@@ -16,13 +16,28 @@ public class Envio
     private Estado estado;
     private List<Paquete> paquetes = new ArrayList<>();
     private Destino destino;
+    private int pesoTotal;
 
     public Envio(String codigoEnvio, Destinatario destinatario, Observador registro, Destino destino) {
         this.codigoEnvio = codigoEnvio;
         this.destinatario = destinatario;
         this.registro = registro;
+        this.pesoTotal = 0;
         this.cambiarEstadoActualizando(new Pendiente()); //?
         this.destino = destino;
+    }
+
+    public String codigoEnvio() {
+        return this.codigoEnvio;
+    }
+
+    public int getPesoTotal() {
+        return pesoTotal;
+    }
+
+    public void reflejarPeso()
+    {
+        this.pesoTotal = this.obtenerPesoEnvio();
     }
 
     public int cantidadPaquetes(){
@@ -32,10 +47,6 @@ public class Envio
     public Destinatario destinatario()
     {
         return this.destinatario;
-    }
-
-    public void confirmar(){
-        this.estado.confirmar(this);
     }
 
     public void agregarPaquete(Paquete unPaquete){

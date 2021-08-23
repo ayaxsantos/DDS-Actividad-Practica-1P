@@ -11,8 +11,6 @@ public class SucursalLogisticaSimple implements SucursalLogistica{
 
     private List<Envio> enviosEnSucursal = new ArrayList<>();
     private List<Transporte> transportes = new ArrayList<>();
-    
-    
 
     @Override
     public void generarRecorrido()
