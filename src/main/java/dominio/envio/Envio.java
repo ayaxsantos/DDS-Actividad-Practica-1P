@@ -16,10 +16,13 @@ public class Envio
 {
     @Id
     @GeneratedValue
+    private int id;
+
+    @Transient
     protected int idEnvio;
 
-    @ManyToOne
-    @JoinColumn(name = "idDestinatario")
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "destinatario_id")
     private Destinatario destinatario;
 
     @Transient

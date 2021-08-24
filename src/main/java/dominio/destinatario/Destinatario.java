@@ -1,14 +1,22 @@
 package dominio.destinatario;
 
 
+import dominio.envio.Envio;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "destinatario")
-public class Destinatario {
+public class Destinatario
+{
+
     @Id
     @GeneratedValue
-    private int idDestinatario;
+    private int id;
+
+    @OneToMany(mappedBy = "destinatario", orphanRemoval = true)
+    private List<Envio> unosEnvios;
 
     @Column(length = 15,nullable = false)
     public String nombre;

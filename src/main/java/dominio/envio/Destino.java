@@ -11,10 +11,10 @@ public class Destino {
 
     @Id
     @GeneratedValue
-    private int idDestino;
+    private int id;
 
     @OneToOne()
-    @JoinColumn(name = "idDestinatario")
+    @JoinColumn(name = "destinatario_id")
     private Destinatario destinatario;
 
     @Column(length = 50,nullable = false)

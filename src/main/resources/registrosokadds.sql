@@ -1,37 +1,32 @@
-create database registrosoka;
+CREATE DATABASE registrosoka;
 
-use registrosoka;
+USE registrosoka;
 
-create table destinatario(
+CREATE TABLE `destinatario` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `apellido` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `nombre` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-	idDestinatario integer auto_increment primary key,
-    nombre varchar(15) not null,
-    apellido varchar(20) not null,
-	email varchar(50) not null
-);
+CREATE TABLE `destino` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `calle` varchar(50) NOT NULL,
+  `localidad` varchar(100) NOT NULL,
+  `numero` int NOT NULL,
+  `destinatario_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_dihwcbhtxh66p801xm3x712oo` (`destinatario_id`),
+  CONSTRAINT `FK_dihwcbhtxh66p801xm3x712oo` FOREIGN KEY (`destinatario_id`) REFERENCES `destinatario` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-create table destino(
-
-	idDestino integer auto_increment primary key,
-	calle varchar(50) not null,
-    numero integer not null,
-    localidad varchar(100) not null,
-    idDestinatario int,
-	foreign key(idDestinatario) references destinatario(idDestinatario)
-);
-
-create table envio(
-	idEnvio integer auto_increment primary key,
-    fechaDevolucion datetime,
-    pesoTotal integer,
-    idDestinatario integer,
-	foreign key (idDestinatario) references destinatario(idDestinatario)
-);
-
-create table paquete(
-	idPaquete integer auto_increment primary key,
-    peso integer not null,
-    tamanio integer,
-    idEnvio integer,
-    foreign key (idEnvio) references envio(idEnvio)
-);
+CREATE TABLE `envio` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `fechaDevolucion` tinyblob,
+  `pesoTotal` int DEFAULT NULL,
+  `destinatario_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_jdo33lvhxfpkqqprc3aoh3vjt` (`destinatario_id`),
+  CONSTRAINT `FK_jdo33lvhxfpkqqprc3aoh3vjt` FOREIGN KEY (`destinatario_id`) REFERENCES `destinatario` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
