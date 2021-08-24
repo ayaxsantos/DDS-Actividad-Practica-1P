@@ -19,7 +19,7 @@ public class Empaquetar
     {
         Paquete unPaquete = new Paquete(unPeso);
         Envio unEnvio = this.unosEnvios.stream()
-                .filter(envio -> envio.codigoEnvio().equals(idEnvio)).findFirst().get();
+                .filter(envio -> envio.idEnvio().equals(idEnvio)).findFirst().get();
 
         unPaquete.definirTamanio();
         unEnvio.agregarPaquete(unPaquete);

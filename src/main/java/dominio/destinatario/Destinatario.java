@@ -9,20 +9,20 @@ public class Destinatario {
     @Id
     @GeneratedValue
     private int idDestinatario;
-    @Column
-    public String nombre;
-    @Column
-    public String apellido;
-    @Column
-    public String email;
-    @Column
-    public String numeroTelefono;
 
-    public Destinatario(String nombre, String apellido, String email, String numeroTelefono) {
+    @Column(length = 15,nullable = false)
+    public String nombre;
+
+    @Column(length = 20, nullable = false)
+    public String apellido;
+
+    @Column(length = 50, nullable = false)
+    public String email;
+
+
+    public Destinatario(String nombre, String apellido, String email) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
-        this.numeroTelefono = numeroTelefono;
-
     }
 }

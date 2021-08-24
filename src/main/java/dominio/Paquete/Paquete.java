@@ -11,12 +11,14 @@ public class Paquete {
     @Id
     @GeneratedValue
     private int idpaquete;
+
     @ManyToOne
     @JoinColumn(name = "idEnvio")
     private Envio envio;
 
     @Column(nullable = false)
     public int peso;
+
     @Column
     public Tamanio tamanio;
 

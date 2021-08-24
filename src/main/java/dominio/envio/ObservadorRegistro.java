@@ -15,14 +15,14 @@ public class ObservadorRegistro implements Observador
     @Override
     public void actualizarEnvio(Envio unEnvio)
     {
-        redis.insertarSet(unEnvio.codigoEnvio().toString(),unEnvio.getEstado());
+        redis.insertarSet(unEnvio.idEnvio().toString(),unEnvio.getEstado());
     }
 
     @Override
     public void leerRegistroDelDia(Envio unEnvio)
     {
-        Set<String> registroEnvios = redis.leerSet(unEnvio.codigoEnvio().toString());
-        System.out.println("El envio " + unEnvio.codigoEnvio + " estuvo:");
+        Set<String> registroEnvios = redis.leerSet(unEnvio.idEnvio().toString());
+        System.out.println("El envio " + unEnvio.idEnvio + " estuvo:");
         registroEnvios.forEach(unValor -> System.out.println("Estado: " + unValor));
     }
 }

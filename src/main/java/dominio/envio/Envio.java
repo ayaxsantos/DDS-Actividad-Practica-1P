@@ -5,6 +5,7 @@ import dominio.destinatario.Destinatario;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Envio
 {
     @Id
     @GeneratedValue
-    protected int codigoEnvio;
+    protected int idEnvio;
 
     @ManyToOne
     @JoinColumn(name = "idDestinatario")
@@ -45,8 +46,8 @@ public class Envio
 
     }
 
-    public Integer codigoEnvio() {
-        return this.codigoEnvio;
+    public Integer idEnvio() {
+        return this.idEnvio;
     }
 
     public int getPesoTotal() {

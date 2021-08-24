@@ -22,20 +22,14 @@ public class Destino {
 
     @Column(nullable = false)
     public int numero;
-    @Column
-    public String departamento;
-    @Column
+
+    @Column(length = 100,nullable = false)
     public String localidad;
 
-    public Destino(String calle, int numero, String localidad, Destinatario destinatario)
-    {
+    public Destino(String calle, int numero, String localidad, Destinatario destinatario) {
         this.calle = calle;
         this.numero = numero;
         this.localidad = localidad;
         this.destinatario = destinatario;
-    }
-
-    public void departamento(String departamento) {
-        this.departamento = departamento;
     }
 }

@@ -5,14 +5,13 @@ public class InterfazCorreo
 {
     public static void ejecutar()
     {
-        Observador observadorRegistro = new ObservadorRegistro();
+/*        Observador observadorRegistro = new ObservadorRegistro();
 
         Destinatario unaPersona = new Destinatario("Armando","Paredes","aparedes@rescateDePatitas.com","99");
         Destinatario otraPersona = new Destinatario("Lau","Reles","lreles@acero.com","12");
 
         Destino destinoPri = new Destino("Calle falsa",123,"Sprinfield",unaPersona);
         Destino destinoSeg = new Destino("Medrano",951,"CABA",otraPersona);
-        destinoSeg.departamento("614");
 
         Envio envioPri = new Envio(30,unaPersona,observadorRegistro,destinoPri);
         Envio envioSeg = new Envio(31,unaPersona,observadorRegistro,destinoPri);
@@ -27,7 +26,7 @@ public class InterfazCorreo
         observadorRegistro.leerRegistroDelDia(envioPri);
         observadorRegistro.leerRegistroDelDia(envioSeg);
         observadorRegistro.leerRegistroDelDia(envioTer);
-
+*/
 
     }
 }
