@@ -1,11 +1,11 @@
 package Persistencia;
 import javax.persistence.*;
 import java.time.LocalDateTime;
-
+/*
 @Entity
-@Table(name = "envio")
+@Table(name = "envio")*/
 public class JpaEnvio {
-    @Id
+    /*@Id
     @GeneratedValue
     private int idEnvio;
     @Column(nullable = false)
@@ -16,5 +16,5 @@ public class JpaEnvio {
     private int pesoTotal;
     @ManyToOne
     @Column
-    private int ideTransporte;
+    private int ideTransporte;*/
 }

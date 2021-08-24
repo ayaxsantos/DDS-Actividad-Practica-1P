@@ -1,8 +1,10 @@
 package dominio.envio;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-
-
+//@Entity
+//@Table(name = "destino")
 public class Destino {
 
     public String calle;

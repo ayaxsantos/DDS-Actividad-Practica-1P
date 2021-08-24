@@ -1,5 +1,7 @@
 package dominio.destinatario;
 
+//@Entity
+//@Table(name = "destinatario")
 public class Destinatario
 {
     public String nombre;

@@ -2,11 +2,11 @@ package Persistencia;
 
 
 import javax.persistence.*;
-
+/*
 @Entity
-@Table(name = "paquete")
+@Table(name = "paquete")*/
 public class JpaPaquete {
-    @Id
+   /* @Id
     @GeneratedValue
     private int idPaquete;
     @ManyToOne
@@ -15,5 +15,5 @@ public class JpaPaquete {
     @Column
     private int peso;
     @Column
-    private int tamanio;
+    private int tamanio;*/
 }

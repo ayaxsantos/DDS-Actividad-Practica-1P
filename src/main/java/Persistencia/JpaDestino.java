@@ -1,13 +1,13 @@
 package Persistencia;
 
 import javax.persistence.*;
-
+/*
 @Entity
-@Table(name = "destino")
+@Table(name = "destino")*/
 public class JpaDestino
 {
     //Recordar refactorizar clase Destino en package destinatario
-    @Id
+  /*  @Id
     @GeneratedValue
     public int idDestino;
     @Column
@@ -20,5 +20,5 @@ public class JpaDestino
     public String localidad;
     @OneToOne
     @Column
-    public int idDestinatario;
+    public int idDestinatario;*/
 }

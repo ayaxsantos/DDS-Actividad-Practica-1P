@@ -3,24 +3,34 @@ package dominio.envio;
 import dominio.Paquete.Paquete;
 import dominio.destinatario.Destinatario;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Entity
+@Table(name = "envio")
 public class Envio
 {
-    protected String codigoEnvio;
+    @Id
+    @GeneratedValue
+    protected Integer codigoEnvio;
+    @Transient
     private Destinatario destinatario;
+    @Transient
     private Observador registro;
+    @Transient
     protected LocalDateTime fechaDevolucion;
+    @Transient
     private Estado estado;
+    @Transient
     private List<Paquete> paquetes = new ArrayList<>();
+    @Transient
     private Destino destino;
+    @Column
     private int pesoTotal;
 
-    public Envio(String codigoEnvio, Destinatario destinatario, Observador registro, Destino destino) {
+    public Envio(Integer codigoEnvio, Destinatario destinatario, Observador registro, Destino destino) {
         this.codigoEnvio = codigoEnvio;
         this.destinatario = destinatario;
         this.registro = registro;
@@ -29,7 +39,7 @@ public class Envio
         this.destino = destino;
     }
 
-    public String codigoEnvio() {
+    public Integer codigoEnvio() {
         return this.codigoEnvio;
     }
 

@@ -15,9 +15,9 @@ public class InterfazCorreo
 
         Destinatario otraPersona = new Destinatario("Lau","Reles","lreles@acero.com","12");
 
-        Envio envioPri = new Envio("30",unaPersona,observadorRegistro,destinoPri);
-        Envio envioSeg = new Envio("31",unaPersona,observadorRegistro,destinoPri);
-        Envio envioTer = new Envio("32",otraPersona,observadorRegistro,destinoSeg);
+        Envio envioPri = new Envio(30,unaPersona,observadorRegistro,destinoPri);
+        Envio envioSeg = new Envio(31,unaPersona,observadorRegistro,destinoPri);
+        Envio envioTer = new Envio(32,otraPersona,observadorRegistro,destinoSeg);
 
         envioPri.cambiarEstadoActualizando(new Devuelto());
         envioPri.cambiarEstadoActualizando(new Entregado());
@@ -26,5 +26,7 @@ public class InterfazCorreo
         observadorRegistro.leerRegistroDelDia(envioPri);
         observadorRegistro.leerRegistroDelDia(envioSeg);
         observadorRegistro.leerRegistroDelDia(envioTer);
+
+
     }
 }

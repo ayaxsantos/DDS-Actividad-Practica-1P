@@ -1,5 +1,11 @@
 package dominio.Paquete;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+//@Entity
+//@Table(name = "paquete")
 public class Paquete
 {
     public int peso;
