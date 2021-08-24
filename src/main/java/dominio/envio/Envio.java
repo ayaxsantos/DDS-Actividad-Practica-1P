@@ -21,8 +21,7 @@ public class Envio
     @Transient
     protected int idEnvio;
 
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "destinatario_id")
+    @Transient
     private Destinatario destinatario;
 
     @Transient
@@ -34,7 +33,7 @@ public class Envio
     @Transient
     public Estado estado;
 
-    @Transient
+    @OneToMany(mappedBy = "envio", cascade = CascadeType.ALL)
     private List<Paquete> paquetes = new ArrayList<>();
 
     @Column

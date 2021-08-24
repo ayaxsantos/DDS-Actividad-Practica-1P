@@ -1,4 +1,5 @@
 import db.EntityManagerHelper;
+import dominio.Paquete.Paquete;
 import dominio.destinatario.Destinatario;
 import dominio.envio.*;
 
@@ -18,10 +19,13 @@ public class InterfazCorreo
         Envio envioSeg = new Envio(31,unaPersona,observadorRegistro);
         Envio envioTer = new Envio(32,otraPersona,observadorRegistro);
 
+        Paquete unPaquete = new Paquete(30);
 
         envioPri.cambiarEstadoActualizando(new Entregado());
         envioPri.cambiarEstadoActualizando(new Devuelto());
         envioTer.cambiarEstadoActualizando(new Pendiente());
+
+        envioPri.agregarPaquete(unPaquete);
 
         observadorRegistro.leerRegistroDelDia(envioPri);
         observadorRegistro.leerRegistroDelDia(envioSeg);
@@ -30,6 +34,20 @@ public class InterfazCorreo
         EntityManagerHelper.beginTransaction();
 
         EntityManagerHelper.getEntityManager().persist(envioPri);
+
+        EntityManagerHelper.commit();
+
+
+        EntityManagerHelper.beginTransaction();
+
+        EntityManagerHelper.getEntityManager().persist(envioSeg);
+
+        EntityManagerHelper.commit();
+
+
+        EntityManagerHelper.beginTransaction();
+
+        EntityManagerHelper.getEntityManager().persist(envioTer);
 
         EntityManagerHelper.commit();
 
