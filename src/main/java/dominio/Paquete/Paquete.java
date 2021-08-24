@@ -14,7 +14,8 @@ public class Paquete {
     @ManyToOne
     @JoinColumn(name = "idEnvio")
     private Envio envio;
-    @Column
+
+    @Column(nullable = false)
     public int peso;
     @Column
     public Tamanio tamanio;

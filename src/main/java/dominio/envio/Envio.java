@@ -33,19 +33,16 @@ public class Envio
     @Transient
     private List<Paquete> paquetes = new ArrayList<>();
 
-    @Transient
-    private Destino destino;
-
     @Column
     private int pesoTotal;
 
-    public Envio(int codigoEnvio, Destinatario destinatario, Observador registro, Destino destino) {
-        this.codigoEnvio = codigoEnvio;
+    public Envio(int idEnvio, Destinatario destinatario, Observador registro) {
+        this.idEnvio = idEnvio;
         this.destinatario = destinatario;
         this.registro = registro;
         this.pesoTotal = 0;
         this.cambiarEstadoActualizando(new Pendiente());
-        this.destino = destino;
+
     }
 
     public Integer codigoEnvio() {

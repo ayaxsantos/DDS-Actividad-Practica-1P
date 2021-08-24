@@ -12,12 +12,15 @@ public class Destino {
     @Id
     @GeneratedValue
     private int idDestino;
-    @ManyToOne
+
+    @OneToOne()
     @JoinColumn(name = "idDestinatario")
     private Destinatario destinatario;
-    @Column
+
+    @Column(length = 50,nullable = false)
     public String calle;
-    @Column
+
+    @Column(nullable = false)
     public int numero;
     @Column
     public String departamento;
