@@ -5,6 +5,7 @@ public class InterfazCorreo
 {
     public static void ejecutar()
     {
+        /*
         Observador observadorRegistro = new ObservadorRegistro();
 
         Destino destinoPri = new Destino("Calle falsa",123,"Sprinfield");
@@ -25,6 +26,6 @@ public class InterfazCorreo
 
         observadorRegistro.leerRegistroDelDia(envioPri);
         observadorRegistro.leerRegistroDelDia(envioSeg);
-        observadorRegistro.leerRegistroDelDia(envioTer);
+        observadorRegistro.leerRegistroDelDia(envioTer);*/
     }
 }

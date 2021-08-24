@@ -1,8 +1,22 @@
 package dominio.Paquete;
 
-public class Paquete
-{
+
+import javax.persistence.*;
+import dominio.envio.Envio;
+
+@Entity
+@Table(name = "paquete")
+public class Paquete {
+
+    @Id
+    @GeneratedValue
+    private int idpaquete;
+    @ManyToOne
+    @JoinColumn(name = "idEnvio")
+    private Envio envio;
+    @Column
     public int peso;
+    @Column
     public Tamanio tamanio;
 
     public Paquete(int peso) {
