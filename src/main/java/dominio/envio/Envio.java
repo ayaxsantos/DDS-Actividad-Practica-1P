@@ -11,38 +11,44 @@ import java.util.List;
 
 @Entity
 @Table(name = "envio")
-public class Envio {
+public class Envio
+{
     @Id
     @GeneratedValue
-    private int idEnvio;
+    protected int codigoEnvio;
+
     @ManyToOne
     @JoinColumn(name = "idDestinatario")
     private Destinatario destinatario;
-    @Column(nullable = false)
-    protected String codigoEnvio;
+
     @Transient
     private Observador registro;
+
     @Column
     protected LocalDateTime fechaDevolucion;
+
     @Transient
-    private Estado estado;
+    public Estado estado;
+
     @Transient
     private List<Paquete> paquetes = new ArrayList<>();
+
     @Transient
     private Destino destino;
+
     @Column
     private int pesoTotal;
 
-    public Envio(String codigoEnvio, Destinatario destinatario, Observador registro, Destino destino) {
+    public Envio(int codigoEnvio, Destinatario destinatario, Observador registro, Destino destino) {
         this.codigoEnvio = codigoEnvio;
         this.destinatario = destinatario;
         this.registro = registro;
         this.pesoTotal = 0;
-        this.cambiarEstadoActualizando(new Pendiente()); //?
+        this.cambiarEstadoActualizando(new Pendiente());
         this.destino = destino;
     }
 
-    public String codigoEnvio() {
+    public Integer codigoEnvio() {
         return this.codigoEnvio;
     }
 
