@@ -21,9 +21,10 @@ public class Transporte {
         return this.envios.size();
     }
 
-    public void hacerRecorrido(){
-        this.estrategia.hacerRecorrido(this);
+    public Integer hacerRecorrido(){
+        Integer tiempoRecorrido = this.estrategia.hacerRecorrido(this);
         this.envios.clear();
+        return tiempoRecorrido;
     }
 
     public boolean puedeSalir()

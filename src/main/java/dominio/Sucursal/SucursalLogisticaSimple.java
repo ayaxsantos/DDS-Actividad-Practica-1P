@@ -13,12 +13,13 @@ public class SucursalLogisticaSimple implements SucursalLogistica{
     private List<Transporte> transportes = new ArrayList<>();
 
     @Override
-    public void generarRecorrido()
+    public List<Integer> generarRecorrido()
     {
         // Les envia el mensaje para que salgan
-        this.transportesQuePuedenSalir().forEach(unTransporte -> unTransporte.hacerRecorrido());
+        List<Integer> tiempos = this.transportesQuePuedenSalir().stream().map(unTransporte -> unTransporte.hacerRecorrido()).collect(Collectors.toList());
         // Actualiza la lista de transporte disponibles
         this.actualizarFlotaDisponible();
+        return tiempos;
     }
 
     public void actualizarFlotaDisponible()

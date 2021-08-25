@@ -1,5 +1,6 @@
 import db.EntityManagerHelper;
 import dominio.Paquete.Paquete;
+import dominio.accion.Empaquetar;
 import dominio.destinatario.Destinatario;
 import dominio.envio.*;
 
@@ -51,5 +52,7 @@ public class InterfazCorreo
 
         EntityManagerHelper.commit();
 
+        Empaquetar empaquetar = new Empaquetar();
+        empaquetar.ejecutar(20,1);
     }
 }

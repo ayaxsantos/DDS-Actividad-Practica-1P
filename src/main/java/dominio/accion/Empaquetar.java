@@ -1,5 +1,6 @@
 package dominio.accion;
 
+import db.EntityManagerHelper;
 import dominio.Paquete.Paquete;
 
 import dominio.envio.Envio;
@@ -7,20 +8,20 @@ import dominio.envio.Envio;
 import java.util.List;
 
 public class Empaquetar {
-    private List<Envio> unosEnvios;
 
-    public Empaquetar(List<Envio> unosEnvios) {
-        this.unosEnvios = unosEnvios;
-    }
-
-    public void ejecutar(int unPeso, String idEnvio) {
+    public void ejecutar(int unPeso, int idEnvio)
+    {
         Paquete unPaquete = new Paquete(unPeso);
-        Envio unEnvio = this.unosEnvios.stream()
-                .filter(envio -> envio.idEnvio().equals(idEnvio)).findFirst().get();
-
+        Envio unEnvio = (Envio) EntityManagerHelper.createQuery("from Envio where id = " + idEnvio).getSingleResult();
         unPaquete.definirTamanio();
         unEnvio.agregarPaquete(unPaquete);
 
         System.out.println("Paquete agregado al envio con codigo" + unEnvio.idEnvio());
+
+        EntityManagerHelper.beginTransaction();
+
+        EntityManagerHelper.getEntityManager().persist(unEnvio);
+
+        EntityManagerHelper.commit();
     }
 }

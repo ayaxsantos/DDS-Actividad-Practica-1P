@@ -1,16 +1,22 @@
 package dominio.accion;
 
 import dominio.Sucursal.SucursalLogistica;
-import dominio.envio.Envio;
 
 import java.util.List;
 
 public class ComenzarRecorridos
 {
-    public void ejecutar(int idSucursal)
+
+    private List<SucursalLogistica> unasSucursales;
+
+    public ComenzarRecorridos(List<SucursalLogistica> unaSucursales) {
+        this.unasSucursales = unaSucursales;
+    }
+
+    public void ejecutar()
     {
-        //SucursalLogistica unaSucursal = this.unasSucursales.stream()
-        //        .filter(envio -> envio.codigoSucursal().equals(idSucursal)).findFirst().get();
-        //unaSucursal.generarRecorrido();
+        this.unasSucursales.forEach(
+                unaSucursal -> System.out.println("Tiempo estimado: " + unaSucursal.generarRecorrido())
+        );
     }
 }

@@ -1,5 +1,7 @@
 package dominio.Sucursal;
 
+import java.util.List;
+
 public interface SucursalLogistica {
-     void generarRecorrido();
+     List<Integer> generarRecorrido();
 }

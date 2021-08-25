@@ -45,6 +45,10 @@ public class Envio
         this.registro = registro;
         this.pesoTotal = 0;
         this.cambiarEstadoActualizando(new Pendiente());
+    }
+
+    public Envio()
+    {
 
     }
 
