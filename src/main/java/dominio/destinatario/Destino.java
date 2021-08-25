@@ -1,4 +1,4 @@
-package dominio.envio;
+package dominio.destinatario;
 
 
 import dominio.destinatario.Destinatario;
@@ -6,10 +6,6 @@ import dominio.destinatario.Destinatario;
 import javax.persistence.*;
 
 public class Destino {
-
-    private int id;
-
-    private Destinatario destinatario;
 
     public String calle;
 
@@ -21,6 +17,5 @@ public class Destino {
         this.calle = calle;
         this.numero = numero;
         this.localidad = localidad;
-        this.destinatario = destinatario;
     }
 }

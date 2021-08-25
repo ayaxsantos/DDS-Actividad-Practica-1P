@@ -2,19 +2,20 @@ import db.EntityManagerHelper;
 import dominio.Paquete.Paquete;
 import dominio.accion.Empaquetar;
 import dominio.destinatario.Destinatario;
+import dominio.destinatario.Destino;
 import dominio.envio.*;
 
-public class InterfazCorreo
+public class InterfazPrueba
 {
     public static void ejecutar()
     {
         Observador observadorRegistro = new ObservadorRegistro();
 
-        Destinatario unaPersona = new Destinatario("Armando","Paredes","aparedes@rescateDePatitas.com");
-        Destinatario otraPersona = new Destinatario("Lau","Reles","lreles@acero.com");
+        Destino destinoPri = new Destino("Calle falsa",123,"Sprinfield");
+        Destino destinoSeg = new Destino("Medrano",951,"CABA");
 
-        Destino destinoPri = new Destino("Calle falsa",123,"Sprinfield",unaPersona);
-        Destino destinoSeg = new Destino("Medrano",951,"CABA",otraPersona);
+        Destinatario unaPersona = new Destinatario("Armando","Paredes","aparedes@rescateDePatitas.com", destinoPri);
+        Destinatario otraPersona = new Destinatario("Lau","Reles","lreles@acero.com",destinoSeg);
 
         Envio envioPri = new Envio(30,unaPersona,observadorRegistro);
         Envio envioSeg = new Envio(31,unaPersona,observadorRegistro);

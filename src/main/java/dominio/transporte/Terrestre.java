@@ -1,6 +1,6 @@
 package dominio.transporte;
 
-import dominio.envio.Destino;
+import dominio.destinatario.Destino;
 
 import java.util.ArrayList;
 import java.util.List;
